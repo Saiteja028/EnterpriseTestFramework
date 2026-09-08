@@ -67,6 +67,43 @@ For more detailed output:
 pytest -v
 ```
 
+Select the target environment at runtime:
+
+```bash
+pytest --env dev
+pytest --env stage
+```
+
+Environment URLs are maintained in `data/environments.json`. Replace the stage placeholder URLs with your actual staging URLs before running stage tests.
+
+Choose the browser at runtime as well:
+
+```bash
+pytest --env dev --browser chromium
+pytest --env dev --browser firefox
+pytest --env stage --browser webkit
+```
+
+Supported browsers are `chromium`, `firefox`, and `webkit`. Install their Playwright binaries before running them:
+
+```bash
+playwright install
+```
+
+By default, tests run with a visible browser window. Use `--headless` for CI or background execution:
+
+```bash
+pytest --env dev --browser chromium --headless
+```
+
+When a browser test fails, a full-page screenshot is saved under `test-results/screenshots/`.
+
+Generate an HTML test report with:
+
+```bash
+pytest --html=test-results/report.html --self-contained-html
+```
+
 To run one test module or one test case:
 
 ```bash

@@ -1,0 +1,10 @@
+{
+  "dev": {
+    "web_base_url": "https://www.amazon.in/",
+    "api_base_url": "https://automationexercise.com/api/"
+  },
+  "stage": {
+    "web_base_url": "https://stage.example.com/",
+    "api_base_url": "https://stage-api.example.com/"
+  }
+}

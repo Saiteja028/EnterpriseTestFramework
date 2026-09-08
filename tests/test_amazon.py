@@ -1,6 +1,8 @@
 from pages.amazon import Amazon
-def testSearchCount(page):
-    amazon= Amazon(page)
+
+
+def test_search_count(page, env_config):
+    amazon = Amazon(page, env_config["web_base_url"])
     amazon.page.goto(amazon.url)
     amazon.waitForload()
     amazon.SearchItem("Shoes")

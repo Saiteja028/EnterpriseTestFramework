@@ -1,9 +1,9 @@
 from playwright.sync_api import Page
 
 class Amazon:
-    url = "https://www.amazon.in/"
-    def __init__(self, page:Page):
+    def __init__(self, page:Page, base_url="https://www.amazon.in/"):
         self.page=page
+        self.url=base_url
         # self.iframe = page.locator("")
         self.searchBar= self.page.locator(".nav-search-field #twotabsearchtextbox")
         self.enter = self.page.locator('[aria-label="Go"]')
